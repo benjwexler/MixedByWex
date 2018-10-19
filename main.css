@@ -42,6 +42,70 @@ body {
 
 }
 
+#topContainer {
+    /* width: 1200px; */
+    width: auto;
+    margin: auto;
+    /* border: 1px solid black; */
+    display: flex;
+    max-width: 1250px;
+    
+    font-size: 60px;
+    text-align: center;
+}
+
+#featuredOn {
+    font-size: 20px;
+    font-family: 'Mali', cursive;
+}
+
+#accolades {
+    text-align: start;
+}
+
+#sectionLeft {
+    width: 33%;
+    height: auto;
+    /* border: 1px solid black; */
+    text-align: center;
+    font-size: 30px;
+    
+}
+
+#logos {
+    display: flex;
+    flex-direction: column;
+    /* margin-top: 20px; */
+    /* align-content: center; */
+}
+
+#hypem {
+    width: 250px;
+    height: 100px;
+    margin: auto;
+    /* margin-top: 20px; */
+}
+
+#earmilk {
+    width: 100px;
+    height: 50px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+
+#engineer {
+    /* margin-left: 10%; */
+    /* text-align: left; */
+}
+#sectionRight {
+    
+    width: 33%;
+    height: auto;
+    margin-top: 10px;
+    /* border: 1px solid black; */
+}
+
 #picFrame {
     width: 250px;
     /* padding: 40px; */
@@ -52,10 +116,11 @@ body {
     margin-top: 20px;
     overflow: hidden;
     margin-bottom: 10px;
+    /* margin-right: 50px; */
 }
 
 #tracksContainer {
-    width: 750px;
+    width: 650px;
     /* padding: 40px; */
     margin: auto;
     border: solid 4px #0ECD99;
@@ -65,10 +130,60 @@ body {
     display: flex;
 }
 
-@media only screen and (max-width: 750px) {
+#audioContainer {
+    margin-top: 10px;
+    position: sticky;
+    /* width: 100%; */
+    /* position: relative; */
+}
+
+#audio {
+    width: 100%;
+    /* margin-left: 10%; */
+    /* margin: auto; */
+    /* width: 100%; */
+    margin-top: 50px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width: 950px) {
+
+    #topContainer {
+        font-size: 40px
+    }
+
+    #sectionLeft {
+        font-size: 35px
+    }
+    #hypem {
+        width: 125px;
+        height: 50px;
+        margin: auto;
+        /* margin-top: 20px; */
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    /* THIS MAKES THE SIGN UP CONTAINER FIT THE FULL SCREEN WIDTH WHEN THE SCREEN SIZE IS LESS THAN 500PX  */
+    #audio {
+        width: 30%;
+        min-width: 400px;
+        
+        
+        
+    }
+   
+    
+}
+
+@media only screen and (max-width: 700px) {
     /* THIS MAKES THE SIGN UP CONTAINER FIT THE FULL SCREEN WIDTH WHEN THE SCREEN SIZE IS LESS THAN 500PX  */
     #tracksContainer {
         width: 100%;
+        max-width: 400px;
         margin-top: 0px;
         height: 70px;
     }
@@ -76,7 +191,24 @@ body {
         width: 200px;
         height: 200px;
         margin-top: 10px;
+        margin-right: auto;
     }
+
+    #audio {
+        margin-top: 0px;
+        position: static;
+        transform: translate(0%, 0%);
+        margin: auto;
+        width: 100%;
+    }
+
+    #sectionLeft {
+        display: none;
+    }
+    #sectionRight {
+        display: none;
+    }
+    
 }
 
 .coverArtContainer {
@@ -185,21 +317,5 @@ body {
     margin-left: 25%;
 }
 
-#audioContainer {
-    margin-top: 10px;
-    position: sticky;
-    /* width: 100%; */
-    /* position: relative; */
-}
 
-#audio {
-    width: 100%;
-    /* margin-left: 10%; */
-
-    /* width: 100%; */
-    /* position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%); */
-}
 
