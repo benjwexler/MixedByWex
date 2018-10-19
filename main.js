@@ -1,26 +1,34 @@
 let tracksObj = {
-    1: {
+    track1: {
         name: "I Got You",
         coverArt: "I Got You Cover Art.png",
         soundfile: "Wex & Cred - I Got You (ft. MKHL).mp3",
     },
-    2: {
+    track2: {
         name: "Aura",
         coverArt: "AuraCoverArt.png",
         soundfile: "Wex - Aura (ft. Waywoc) 4.wav",
     },
-    3: {
+    track3: {
         name: "Strictly for the Music",
         coverArt: "evenNewStrict.png",
         soundfile: "Strictly for the Music.wav",
     },
 }
 
+let audioPlayer = document.getElementById("audio")
+let audioSource = document.getElementById("audioSource")
+
+audioSource.src = tracksObj.track1.soundfile
+audioPlayer.load()
+
+let currentTrack = 1;
+
 let tracksObjLength = Object.keys(tracksObj).length
 
 for (let i = 1; i <= tracksObjLength; i++) {
 
-    tracksObj[`${i}`].isPlaying = false
+    tracksObj[`track${i}`].isPlaying = false
 
     const alltracksBossContainer = document.getElementById("alltracksBossContainer")
     var tracksContainer = document.createElement("div");
@@ -31,8 +39,8 @@ for (let i = 1; i <= tracksObjLength; i++) {
     coverArtContainer.classList.add("coverArtContainer");
     tracksContainer.appendChild(coverArtContainer);
     var coverArtPic = document.createElement("img");
-    if (i===2) {
-        coverArtPic.classList.add("coverArt");  
+    if (i === 2) {
+        coverArtPic.classList.add("coverArt");
     }
     coverArtPic.classList.add("iGotYouCoverArt");
     coverArtContainer.appendChild(coverArtPic);
@@ -46,6 +54,7 @@ for (let i = 1; i <= tracksObjLength; i++) {
 
     var playPauseContainer = document.createElement("div");
     playPauseContainer.classList.add("playPauseContainer");
+    playPauseContainer.id = `playTrack${i}`
     tracksContainer.appendChild(playPauseContainer);
     var fontAwesomePlayTrackIcon = document.createElement("i");
     fontAwesomePlayTrackIcon.classList.add("fas", "fa-play", "fa-2x", "fontAwesomePlayTrackIcon");
@@ -56,8 +65,62 @@ for (let i = 1; i <= tracksObjLength; i++) {
 const tracks = document.getElementsByClassName("tracksContainer")
 
 for (let i = 0; i < tracks.length; i++) {
-    window[`track${i+1}`] = tracks[i]
-    window[`track${i+1}CoverArt`] = window[`track${i+1}`].querySelector(".coverArtContainer").querySelector(".iGotYouCoverArt").src = tracksObj[`${i+1}`].coverArt
-    window[`track${i+1}Title`] = window[`track${i+1}`].querySelector(".trackTitleContainer").querySelector(".title").innerText = tracksObj[`${i+1}`].name
-    
+    window[`track${i + 1}`] = tracks[i]
+    window[`track${i + 1}CoverArt`] = window[`track${i + 1}`].querySelector(".coverArtContainer").querySelector(".iGotYouCoverArt").src = tracksObj[`track${i + 1}`].coverArt
+    window[`track${i + 1}Title`] = window[`track${i + 1}`].querySelector(".trackTitleContainer").querySelector(".title").innerText = tracksObj[`track${i + 1}`].name
+
 }
+
+let firstPlay;
+
+
+function playAndPauseTrack() {
+    let id = this.id
+    id = id[id.length - 1]
+
+    if (firstPlay === undefined) {
+        currentTrack = id;
+        firstPlay = true
+    } 
+        if (tracksObj[`track${id}`].isPlaying === false) {
+            audioSource.src = tracksObj[`track${id}`].soundfile
+            if (currentTrack != id || (firstPlay === true)) {
+                audioPlayer.load()
+            }
+            audioPlayer.play()
+            window[`track${id}`].querySelector(".playPauseContainer").innerHTML = '<i class="fas fa-pause fa-2x fontAwesomePlayTrackIcon"></i>'
+            if (currentTrack != id) {
+                window[`track${currentTrack}`].querySelector(".playPauseContainer").innerHTML = '<i class="fas fa-play fa-2x fontAwesomePlayTrackIcon"></i>'
+                tracksObj[`track${currentTrack}`].isPlaying = false
+            }
+        } else {
+            audioPlayer.pause()
+            window[`track${id}`].querySelector(".playPauseContainer").innerHTML = '<i class="fas fa-play fa-2x fontAwesomePlayTrackIcon"></i>'
+
+        }
+
+        firstPlay = false
+        currentTrack = id;
+
+        tracksObj[`track${id}`].isPlaying = !tracksObj[`track${id}`].isPlaying
+
+    }
+
+
+const playButton = document.getElementsByClassName("playPauseContainer")
+
+for (let i = 0; i < playButton.length; i++) {
+    playButton[i].addEventListener("click", playAndPauseTrack)
+}
+
+function changeIconFromAudioController () {
+    if (tracksObj[`track${currentTrack}`].isPlaying === false) {
+        window[`track${currentTrack}`].querySelector(".playPauseContainer").innerHTML = '<i class="fas fa-pause fa-2x fontAwesomePlayTrackIcon"></i>'
+        
+    } else {
+        window[`track${currentTrack}`].querySelector(".playPauseContainer").innerHTML = '<i class="fas fa-play fa-2x fontAwesomePlayTrackIcon"></i>'
+    }
+    tracksObj[`track${currentTrack}`].isPlaying = !tracksObj[`track${currentTrack}`].isPlaying
+}
+
+audioPlayer.addEventListener("click", changeIconFromAudioController)
