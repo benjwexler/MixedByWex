@@ -1,5 +1,3 @@
-<h2> Website for producer Wex </h2>
-
 <img src="mixedByWex.jpg" width="200">
 
 
