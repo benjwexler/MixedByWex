@@ -1,4 +1,4 @@
-<h1> Website for Hip-Hop producer Wex </h1>
+<h2> Website for producer Wex </h2>
 
 <img src="mixedByWex.jpg" width="200">
 
