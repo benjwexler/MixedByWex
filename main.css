@@ -11,6 +11,7 @@ body {
     max-width: 1200px;
     margin: auto;
     border-bottom: 1px solid rgba(14, 205, 154, 0.315);
+
 }
 
 #kicklrLogo {
@@ -20,10 +21,16 @@ body {
 
 .navbarText {
     color: #0ECD99;
+   
 }
 
 .nav-link {
     color: #0ECD99 !important; 
+    
+}
+
+.nav-link:hover {
+    color: #7C67CB !important;
 }
 
 #marginRight {
@@ -120,7 +127,7 @@ body {
 }
 
 .tracksContainer {
-    width: 650px;
+    width: 600px;
     /* padding: 40px; */
     margin: auto;
     border: solid 4px #0ECD99;

@@ -1,18 +1,18 @@
 let tracksObj = {
     track1: {
         name: "I Got You",
-        coverArt: "I Got You Cover Art.png",
-        soundfile: "Wex & Cred - I Got You (ft. MKHL).mp3",
+        coverArt: "pics/I Got You Cover Art.png",
+        soundfile: "soundfiles/Wex & Cred - I Got You (ft. MKHL).mp3",
     },
     track2: {
         name: "Aura",
-        coverArt: "AuraCoverArt.png",
-        soundfile: "Wex - Aura (ft. Waywoc) 4.wav",
+        coverArt: "pics/AuraCoverArt.png",
+        soundfile: "soundfiles/Wex - Aura (ft. Waywoc) 4.wav",
     },
     track3: {
         name: "Strictly for the Music",
-        coverArt: "evenNewStrict.png",
-        soundfile: "Strictly for the Music.wav",
+        coverArt: "pics/evenNewStrict.png",
+        soundfile: "soundfiles/Strictly for the Music.wav",
     },
 }
 
