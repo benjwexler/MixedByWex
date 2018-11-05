@@ -177,8 +177,8 @@ body {
 @media only screen and (min-width: 600px) {
     /* THIS MAKES THE SIGN UP CONTAINER FIT THE FULL SCREEN WIDTH WHEN THE SCREEN SIZE IS LESS THAN 500PX  */
     #audio {
-        width: 30%;
-        min-width: 400px;
+        width: 20%;
+        min-width: 300px;
         
         
         
