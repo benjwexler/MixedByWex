@@ -7,7 +7,6 @@ body {
 }
 
 .navbar {
-    /* background-color: black; */
     max-width: 1200px;
     margin: auto;
     border-bottom: 1px solid rgba(14, 205, 154, 0.315);
@@ -50,10 +49,8 @@ body {
 }
 
 #topContainer {
-    /* width: 1200px; */
     width: auto;
     margin: auto;
-    /* border: 1px solid black; */
     display: flex;
     max-width: 1250px;
     
@@ -73,7 +70,6 @@ body {
 #sectionLeft {
     width: 33%;
     height: auto;
-    /* border: 1px solid black; */
     text-align: center;
     font-size: 30px;
     
@@ -82,15 +78,12 @@ body {
 #logos {
     display: flex;
     flex-direction: column;
-    /* margin-top: 20px; */
-    /* align-content: center; */
 }
 
 #hypem {
     width: 250px;
     height: 100px;
     margin: auto;
-    /* margin-top: 20px; */
 }
 
 #earmilk {
@@ -100,22 +93,14 @@ body {
     margin-top: 20px;
 }
 
-
-#engineer {
-    /* margin-left: 10%; */
-    /* text-align: left; */
-}
 #sectionRight {
-    
     width: 33%;
     height: auto;
     margin-top: 10px;
-    /* border: 1px solid black; */
 }
 
 #picFrame {
     width: 250px;
-    /* padding: 40px; */
     margin: auto;
     border: solid 5px #7C67CB;
     height: 250px;
@@ -123,19 +108,16 @@ body {
     margin-top: 20px;
     overflow: hidden;
     margin-bottom: 10px;
-    /* margin-right: 20%; */
 }
 
 .tracksContainer {
     width: 600px;
-    /* padding: 40px; */
     margin: auto;
     border: solid 4px #0ECD99;
     
     height: 100px;
     margin-top: 20px;
     display: flex;
-    /* margin-left: 200px; */
 }
 
 #audioContainer {
@@ -143,15 +125,10 @@ body {
     position: sticky;
     max-width: 414px;
     margin: auto;
-    /* width: 100%; */
-    /* position: relative; */
 }
 
 #audio {
     width: 100%;
-    /* margin-left: 10%; */
-    /* margin: auto; */
-    /* width: 100%; */
     margin-top: 50px;
     position: absolute;
     left: 50%;
@@ -172,7 +149,6 @@ body {
         width: 125px;
         height: 50px;
         margin: auto;
-        /* margin-top: 20px; */
     }
 }
 
@@ -181,12 +157,7 @@ body {
     #audio {
         width: 20%;
         min-width: 300px;
-        
-        
-        
     }
-   
-    
 }
 
 @media only screen and (max-width: 700px) {
@@ -202,6 +173,10 @@ body {
         height: 200px;
         margin-top: 10px;
         margin-right: auto;
+    }
+
+    #audioContainer {
+        margin-top: 10px;
     }
 
     #audio {
@@ -225,8 +200,6 @@ body {
     height: 100%;
     width: 20%;
     border: 1px solid #7C67CB;
-    
-    
 }
 
 .playPauseContainer {
@@ -234,9 +207,6 @@ body {
     width: 20%;
     border: 1px solid #7C67CB;
     position: relative;
-   
-    
-    
 }
 
 .fontAwesomePlayTrackIcon {
@@ -245,14 +215,7 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    /* margin-left: 30%; */
     text-align: center;
-  
-    /* border: 1px solid black;
-    border-radius: 50%; */
-    
-   
-
 }
 
 .coverArt {
@@ -264,26 +227,18 @@ body {
 }
 
 .iGotYouCoverArt {
-    /* filter: grayscale(50%); */
     height: 100%;
     width: 100%;
-    /* filter:hue-rotate(160deg); */
-
 }
 
 .title {
-    /* height: 100%; */
     width: 100%;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     font-family: 'Mali', cursive;
-    /* margin-left: 10%; */
-    /* font-size: 2em; */
 }
-
-
 
 .trackTitleContainer {
     height: 100%;
